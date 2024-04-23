@@ -31,7 +31,13 @@ A página inicial exibe valores padrão para cada campo de entrada. Você pode i
 
 1. Instale o [Python](https://www.python.org/)
 2. Instale as bibliotecas
+```
+pip install -r requirements.txt
+```
 3. Navegue até a pasta do servidor no terminal e execute a aplicação do servidor Python.
+```
+python server.py
+```
 4. Abra o arquivo index.html na pasta do cliente usando seu navegador preferido (Chrome, Edge, Brave, etc.).
 5. Divirta-se! 😊
 
