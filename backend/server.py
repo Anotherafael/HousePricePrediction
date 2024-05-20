@@ -37,4 +37,4 @@ def predict_home_price():
 
 if __name__ == "__main__":
     print("Starting server...")
-    app.run(port=5000)
+    app.run(port=5000, host="0.0.0.0")
