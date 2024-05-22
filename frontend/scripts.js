@@ -8,10 +8,10 @@ function getBathValue() {
     return -1;
 }
 
-function getBHKValue() {
-    var uiBHK = document.getElementsByName("uiBHK");
-    for (var i in uiBHK) {
-        if (uiBHK[i].checked) {
+function getBedValue() {
+    var uiBed = document.getElementsByName("uiBed");
+    for (var i in uiBed) {
+        if (uiBed[i].checked) {
             return parseInt(i) + 1;
         }
     }
@@ -20,7 +20,7 @@ function getBHKValue() {
 
 function onClickedEstimatePrice() {
     var sqft = document.getElementById("uiSqft");
-    var bhk = getBHKValue();
+    var bed = getBedValue();
     var bathrooms = getBathValue();
     var location = document.getElementById("uiLocations");
     var estPrice = document.getElementById("uiEstimatedPrice");
@@ -29,11 +29,11 @@ function onClickedEstimatePrice() {
 
     $.post(url, {
         total_sqft: parseFloat(sqft.value),
-        bhk: bhk,
+        bed: bed,
         bath: bathrooms,
         location: location.value
     }, function (data, _) {
-        estPrice.innerHTML = "<h2>" + data.estimated_price.toString() + " Lakh</h2>";
+        estPrice.innerHTML = "<h2>" + data.estimated_price.toString() + " USD</h2>";
     });
 }
 
